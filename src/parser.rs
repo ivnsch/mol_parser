@@ -7,7 +7,7 @@ use anyhow::{anyhow, Result};
 
 use crate::element::Element;
 
-pub async fn parse_xyz(path: &str, mol_id: u32) -> Result<Mol> {
+pub async fn parse_mol2(path: &str, mol_id: u32) -> Result<Mol> {
     let file = File::open(path)?;
     let buf_reader = BufReader::new(file);
 

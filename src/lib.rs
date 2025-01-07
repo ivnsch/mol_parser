@@ -4,14 +4,14 @@ mod parser;
 #[cfg(test)]
 mod tests {
     use element::Element;
-    use parser::parse_xyz;
+    use parser::parse_mol2;
 
     use super::*;
 
     #[tokio::test]
     async fn it_works() {
         let file = "assets/benzene.mol2";
-        let mol_res = parse_xyz(&file, 1).await;
+        let mol_res = parse_mol2(&file, 1).await;
         assert!(mol_res.is_ok());
 
         let mol = mol_res.unwrap();
